@@ -50,8 +50,14 @@ function receberValorConta(evento) {
         }
     })
 
-
-
-    porcentagem = Number(evento.target.value) / 100
+    if(evento.target.value !== ""){
+        porcentagem = parseFloat(evento.target.value) / 100
+    } else{
+        porcentagem = 0
+    }
+    console.log(porcentagem)
     
  }
+
+ const gorjetaInput = document.querySelector("#outra")
+ gorjetaInput.addEventListener ("input" ,  receberPorcentagem)
